@@ -3,11 +3,12 @@ package com.example.databasetest;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
                 ContentValues values = new ContentValues();
                 values.put("price", 10.99);
-                db.update("Book", values, "name = ?", new String[] { "The Da Vinci Code" });
+                db.update("Book", values, "name = ?", new String[]{"The Da Vinci Code"});
             }
         });
         Button deleteButton = (Button) findViewById(R.id.delete_data);
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
-                db.delete("Book", "pages > ?", new String[] { "500" });
+                db.delete("Book", "pages > ?", new String[]{"500"});
             }
         });
         Button queryButton = (Button) findViewById(R.id.query_data);

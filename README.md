@@ -1,5 +1,8 @@
-# 关注我的微信公众号学习更多技术
+# 说明
+## 《第一行代码》第二版的源代码，升级一下gradle 和 迁移到androidX。
 
-<img src="https://raw.githubusercontent.com/guolindev/booksource/master/qrcode.jpg" width="250" />
+## 升级说明：
+### 用到哪个章节，就切换哪个章节。
 
-如果是对书中源码有疑问，也可以到公众号里给我留言。微信扫一扫上方二维码即可关注。
+## 已经完成的章节
+* chapter7
