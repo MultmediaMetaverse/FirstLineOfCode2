@@ -1,11 +1,12 @@
 package com.example.sharedpreferencestest;
 
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,9 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = pref.getString("name", "");
                 int age = pref.getInt("age", 0);
                 boolean married = pref.getBoolean("married", false);
-                Log.d("MainActivity", "name is " + name);
-                Log.d("MainActivity", "age is " + age);
-                Log.d("MainActivity", "married is " + married);
+                Log.d("MainActivity", "name is " + name + ", age is" + age +", married is " + married);
             }
         });
     }
