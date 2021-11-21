@@ -10,6 +10,14 @@
         android:name="com.example.databasetest.provider.WRITE_PERMISSION"
         android:protectionLevel="signatureOrSystem" />
 
+    <permission
+        android:name="com.example.databasetest.provider.READ_BOOK_PERMISSION"
+        android:protectionLevel="signatureOrSystem" />
+
+    <permission
+        android:name="com.example.databasetest.provider.WRITE_BOOK_PERMISSION"
+        android:protectionLevel="signatureOrSystem" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,8 +39,31 @@
             android:authorities="com.example.databasetest.provider"
             android:enabled="true"
             android:exported="true"
+            android:grantUriPermissions="true"
             android:readPermission="com.example.databasetest.provider.READ_PERMISSION"
-            android:writePermission="com.example.databasetest.provider.WRITE_PERMISSION" />
+            android:writePermission="com.example.databasetest.provider.WRITE_PERMISSION">
+            <grant-uri-permission android:pathPrefix="/book" />
+            <path-permission
+                android:pathPrefix="/book"
+                android:readPermission="com.example.databasetest.provider.READ_BOOK_PERMISSION"
+                android:writePermission="com.example.databasetest.provider.WRITE_BOOK_PERMISSION" />
+        </provider>
+
+        <!--provider
+            android:name=".DatabaseProvider"
+            android:authorities="com.example.databasetest.provider"
+            android:enabled="true"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:readPermission="com.example.databasetest.provider.READ_PERMISSION"
+            android:writePermission="com.example.databasetest.provider.WRITE_PERMISSION">
+            <grant-uri-permission android:pathPrefix="/book" />
+            <path-permission
+                android:pathPrefix="/book"
+                android:readPermission="com.example.databasetest.provider.READ_BOOK_PERMISSION"
+                android:writePermission="com.example.databasetest.provider.WRITE_BOOK_PERMISSION" />
+        </provider -->
+
     </application>
 
 </manifest>
