@@ -1,10 +1,11 @@
 package com.example.litepaltest;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.litepal.crud.DataSupport;
 import org.litepal.tablemanager.Connector;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 List<Book> books = DataSupport.findAll(Book.class);
-                for (Book book: books) {
+                for (Book book : books) {
                     Log.d("MainActivity", "book name is " + book.getName());
                     Log.d("MainActivity", "book author is " + book.getAuthor());
                     Log.d("MainActivity", "book pages is " + book.getPages());
