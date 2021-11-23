@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.databasetest">
-
+    <permission
+        android:name="com.example.databasetest.provider.READ_WRITE_PERMISSION"
+        android:protectionLevel="signatureOrSystem" />
     <permission
         android:name="com.example.databasetest.provider.READ_PERMISSION"
         android:protectionLevel="signatureOrSystem" />
@@ -40,8 +42,10 @@
             android:enabled="true"
             android:exported="true"
             android:grantUriPermissions="true"
+            android:permission="com.example.databasetest.provider.READ_WRITE_PERMISSION"
             android:readPermission="com.example.databasetest.provider.READ_PERMISSION"
-            android:writePermission="com.example.databasetest.provider.WRITE_PERMISSION">
+            android:writePermission="com.example.databasetest.provider.WRITE_PERMISSION"
+            >
             <grant-uri-permission android:pathPrefix="/book" />
             <path-permission
                 android:pathPrefix="/book"
